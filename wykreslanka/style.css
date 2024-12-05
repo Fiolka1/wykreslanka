@@ -1,0 +1,41 @@
+body{
+    background-color: green;
+}
+#spanowy{
+    float: left;
+    background-color: blue;
+    position: relative;
+    left: 25%;
+    top: 100px;
+    height: 650px;
+    width: 50%;
+}
+#centrum{
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+    float: left;
+    overflow: auto;
+}
+table{
+    
+    margin: 5%;
+    text-align: center;
+    border: solid brown 5px;
+    border-collapse: collapse;
+}
+tr{
+    background-color: yellow;
+    padding: 0px;
+    margin: 0px;
+}
+td{
+    border: solid brown 5px;
+    background-color: red;
+    padding: 0px;
+    margin: 0px;
+    font-size: 300%;
+
+    
+}
