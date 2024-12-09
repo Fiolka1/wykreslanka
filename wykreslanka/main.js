@@ -27,40 +27,47 @@ function srakaa() {
       // console.log(data);
     }
   }
-  ijndex=0;
-  splitted_word=[];
-  words.forEach(element => {
-    if (element>=width) {
-      splitted_word[ijndex] = element.split("");
-      // console.log(splitted_word)  
-      ijndex++;
-      
-    }
-  });
-  ijndex=0;
-  for (let index = 0; index < height; index++) {
-    // console.log(words[index])
-    if (splitted_word[index].length <= width) {
-      console.log(splitted_word[index])
+  ijndex = 0; //table data id
+  multiplayer=0;
+  words.forEach((element) => {
+    if (element.length <= width) {
+      // console.log(element);
       switch (Math.floor(Math.random() * 2)) {
         case 1:
+          splitted = element.toUpperCase();
+          splitted = splitted.split("");
+          console.log(splitted.length);
           
-          
-          console.log(splitted_word);
-          splitted_word[index].forEach((element) => {
-            // console.log(ijndex)
-            
-            document.getElementById("table_data_" + ijndex).innerHTML = element;
-            ijndex++;
-          });
+          try {
+            console.log(splitted.length ,"<=", width, "-" ,multiplayer)
+            if (splitted.length <= width - multiplayer) {
+              splitted.forEach((element) => {
+                console.log(element);
+                document.getElementById("table_data_" + ijndex).innerHTML =
+                  element;
+                multiplayer++;
+                ijndex++;
+              });
+            } else {
+              console.log("za mała szerokość")
+            }
+          } catch (error) {
+            // console.log("za mała miejsce");
+          }
+
           break;
         default:
+          
           break;
+          
+      }
+      ijndex++;
+      multiplayer++;
+      if (multiplayer>=width) {
+        multiplayer=0;
       }
     }
-    
-  }
- 
+  });
 }
 words = [
   "angular",
